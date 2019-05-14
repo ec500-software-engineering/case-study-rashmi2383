@@ -1,6 +1,6 @@
 ## Scikit-Learn Case Study
 
-![](Figures/SC overview.jpg)
+![](Figures/SC_overview.jpg)
 
 ### Project Description
 
@@ -38,7 +38,7 @@ Conceptually Scikit-learn is a composition of six major functional components:
 
 The high-level diagram below provides a visual representation of the functional decomposition and example use cases for each component.
 
-![system](Figures/Scikit System.jpg)
+![system](Figures/Scikit_System.jpg)
 
 ### Library Design
 
@@ -69,7 +69,7 @@ Having installed these dependencies, one can build the project using `python set
 Scikit-learn utilizes PyTest (version 3.3.0 or above) as the main testing framework for the project. Tests located within the directory `sklearn/tests` cover the core functionality used throughout the program.
 Launching the test simply requires the command `pytest sklearn`. The figure below shows an example result in running PyTest on the defined tests.
 
-![](Figures/Test Results.JPG)
+![](Figures/Test_Results.JPG)
 
 As depicted in the screenshot below, the test failure is caused by running out of available memory on the host system. This is not a surprising result because I am running Scikit-learn on a virtual machine which shares only `1024 MB` of memory (in which nearly half is used by the Linux Kernel Image). Therefore, this failing test used a much larger number of features than C's `malloc()` was willing support. A major reason of pointing out this particular testing session is to argue that this is an area in which Scikit-learn can improve; when testing, especially unit testing, it is generally preferable to limit the amount of non-deterministic behavior within the test cases. In this case, I would modify the test so that the number of features used is bounded by the available memory. An even better alternative is to avoid dynamically allocating memory since this functionality is independent of the core Scikit-learn implementation.
 
