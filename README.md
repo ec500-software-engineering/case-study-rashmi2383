@@ -1,11 +1,11 @@
 ## Scikit-Learn Case Study
 
-![](Figures/SC_overview.jpg)
-
 ### Project Description
 
 
-[Scikit-learn](https://scikit-learn.org/stable/index.html) is a free open source machine learning library for the Python Programming Language. As a library, it provides popular classes of statistical learning related algorithms such as regression, clustering and support vector machines.
+[Scikit-learn](https://scikit-learn.org/stable/index.html) is a free open source machine learning library for the Python Programming Language. As a library, it provides popular classes of statistical learning related algorithms such as regression, clustering and support vector machines. The following figure presents an overview of the Scikit-learn library: 
+
+![](Figures/SC_overview.jpg)
 
 ### Programming Language Usage
 
