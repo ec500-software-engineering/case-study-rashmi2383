@@ -163,6 +163,8 @@ The figure below represents a plot of KMeans clustering using silhouette analysi
 
 ### Public Reviews
 
+Although Scikit-learn is a popular machine learning library, I would like to present a public review of this library. 
+
 #### Pros
 
 - Scikit-learn has a good selection of algorithms It’s a fairly conservative project that’s pretty careful about avoiding scope creep and jumping on unproven algorithms, for reasons of maintainability and limited developer resources. 
