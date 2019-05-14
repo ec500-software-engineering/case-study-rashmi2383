@@ -163,15 +163,15 @@ The figure below represents a plot of KMeans clustering using silhouette analysi
 
 ### Public Reviews
 
-Although Scikit-learn is a popular machine learning library, I would like to present a public review of this library. 
+Overall the scikit-learn consensus is positive and has a very large user base including many [famous companies](https://scikit-learn.org/stable/testimonials/testimonials.html). Listed below are the public views about this libaray:  
 
-#### Pros
+#### Positive views
 
 - Scikit-learn has a good selection of algorithms It’s a fairly conservative project that’s pretty careful about avoiding scope creep and jumping on unproven algorithms, for reasons of maintainability and limited developer resources. 
 - The modules are well-updated one, releasing updates several times a year. Users can also look forward to assistance from an international community, in case they have queries or if they hit snags in development using the module. 
 - A documentation detailing the use of its API exists that users can access anytime on the website. This makes certain developers can implement machine learning algorithms offered by the tool seamlessly.
 
-#### Cons
+#### Negative views
 
 - Scikit-learn doesn’t support GPU acceleration for multiple reasons having to do with the complexity and the machine dependencies it would introduce. Then again, aside from neural networks, Scikit-learn has little need for GPU acceleration. 
 - Scikit-learn’s implementation of MLP is expressly not intended for large-scale applications Scikit-learn does not cover are deep learning, reinforcement learning, graphical models, and sequence prediction. 
