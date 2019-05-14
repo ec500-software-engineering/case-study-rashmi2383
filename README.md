@@ -1,14 +1,38 @@
 ## Scikit-Learn Case Study
 
+
+
 ### Project Description
 
 
-[Scikit-learn](https://scikit-learn.org/stable/index.html) is a free open source machine learning library for the Python Programming Language. As a library, it provides popular classes of statistical learning related algorithms such as regression, clustering and support vector machines. The following figure presents an overview of the Scikit-learn library: 
+[Scikit-learn](https://scikit-learn.org/stable/index.html) is a free open source machine learning library for the Python Programming Language. As a library, it provides popular classes of statistical learning related algorithms such as regression, clustering and support vector machines. The following figure presents an overview of the Scikit-learn library:
 
-![](Figures/SC_overview.jpg)
+![](Figures/SC overview.jpg)
+
+Scikit-learn frequently ranks very high against other machine learning libraries ([example ranking 1](https://www.kdnuggets.com/2018/10/top-python-machine-learning-libraries.html), [example ranking 2](https://activewizards.com/blog/top-20-python-libraries-for-data-science-in-2018/)) not only due to GitHub activity but also due its inherit advantages it provides as a platform:
+
+- __Free Platform__:
+Because scikit-learn is released with a BSD license, it can be used for free by everyone. This license has minimal restrictions; therefore, users can utilize it to design their applications and platforms with little worry over limitations.
+
+- __Industrial Use__: 
+Scikit-learn is a helpful platform that can predict consumer behavior, identify abusive actions in the cloud, create neuroimages, and more. It is being used extensively by commercial and research organizations around the world, a testament to its ease of use and overall advantage.
+
+- __Collaborative Library__:
+Scikit-learn began as a one-man mission but now it is being built by numerous authors from INRIA spearheaded by Fabian Pedregosa and individual contributors who are not attached to teams or organizations. This makes the module a well-updated one, releasing updates several times a year. Users can also look forward to assistance from an international community, in case they have queries or if they hit snags in development using the module.
+
+- __Ease of Use__:
+Commercial entities and research organizations alike have employed scikit-learn in their processes. They all agree that the module is easy-to-use, thereby allowing them to perform a multitude of processes with nary a problem.
+
+- __API Documentation__:
+Scikit-learn ensures that users old and new alike get the assistance they need in integrating the machine learning module into their own platforms. That is why a documentation detailing the use of its API exists that users can access anytime on the website. This makes certain developers can implement machine learning algorithms offered by the tool seamlessly.
+
+- __Technology & Platform used for development__:
+Scikit-learn is built in Python. The latest version of scikit requires Python 3.5 or above. The choice of Python is appropriate due to its rich math and scientific libraries like Numpy, Scipy and matplotlib. Scikit uses Numpy 1.11.0 or above and Scipy 0.17.0 or above. 
+
 
 ### Programming Language Usage
 
+Scikit-learn is developed using three core languages.
 - Python: Core language of the Scikit-learn
 - C/C++: Source code in this language is primarily found in `scikit-learn/utils` and describes extensions to be compiled at setup time. Some algorithms such as support vector machines
 - Cython: A superset of python allowing for a more "pythonic" means of utilizing and writing extensions written in C/C++
@@ -38,7 +62,7 @@ Conceptually Scikit-learn is a composition of six major functional components:
 
 The high-level diagram below provides a visual representation of the functional decomposition and example use cases for each component.
 
-![system](Figures/Scikit_System.jpg)
+![system](Figures/Scikit System.jpg)
 
 ### Library Design
 
@@ -69,7 +93,7 @@ Having installed these dependencies, one can build the project using `python set
 Scikit-learn utilizes PyTest (version 3.3.0 or above) as the main testing framework for the project. Tests located within the directory `sklearn/tests` cover the core functionality used throughout the program.
 Launching the test simply requires the command `pytest sklearn`. The figure below shows an example result in running PyTest on the defined tests.
 
-![](Figures/Test_Results.JPG)
+![](Figures/Test Results.JPG)
 
 As depicted in the screenshot below, the test failure is caused by running out of available memory on the host system. This is not a surprising result because I am running Scikit-learn on a virtual machine which shares only `1024 MB` of memory (in which nearly half is used by the Linux Kernel Image). Therefore, this failing test used a much larger number of features than C's `malloc()` was willing support. A major reason of pointing out this particular testing session is to argue that this is an area in which Scikit-learn can improve; when testing, especially unit testing, it is generally preferable to limit the amount of non-deterministic behavior within the test cases. In this case, I would modify the test so that the number of features used is bounded by the available memory. An even better alternative is to avoid dynamically allocating memory since this functionality is independent of the core Scikit-learn implementation.
 
@@ -136,4 +160,19 @@ The figure below represents a plot of KMeans clustering using silhouette analysi
 *n* = 6 which represents the maximum number of clusters to generate. This example can be launched by executing `python scikit-learn/examples/examples/cluster/plot_kmeans_silhouette_analysis.py`
 
 ![](Figures/ClusteringExample.JPG)
+
+### Public Reviews
+
+#### Pros
+
+- Scikit-learn has a good selection of algorithms It’s a fairly conservative project that’s pretty careful about avoiding scope creep and jumping on unproven algorithms, for reasons of maintainability and limited developer resources. 
+- The modules are well-updated one, releasing updates several times a year. Users can also look forward to assistance from an international community, in case they have queries or if they hit snags in development using the module. 
+- A documentation detailing the use of its API exists that users can access anytime on the website. This makes certain developers can implement machine learning algorithms offered by the tool seamlessly.
+
+#### Cons
+
+- Scikit-learn doesn’t support GPU acceleration for multiple reasons having to do with the complexity and the machine dependencies it would introduce. Then again, aside from neural networks, Scikit-learn has little need for GPU acceleration. 
+- Scikit-learn’s implementation of MLP is expressly not intended for large-scale applications Scikit-learn does not cover are deep learning, reinforcement learning, graphical models, and sequence prediction. 
+- It is defined as being in and for Python, so it doesn’t have APIs for other languages. 
+
 
